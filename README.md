@@ -1,0 +1,2 @@
+# Automation-of-Laundry-and-Ironing-Services-Using-Web-Based-System
+This project is a web-based system for automating laundry and ironing services. It allows customers to register, place service requests, track their order status, and manage payments online.  The system is built using Python for backend, MySQL for database, and HTML, CSS, Bootstrap, and JavaScript for frontend with a responsive design.
