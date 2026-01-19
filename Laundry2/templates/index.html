@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaundryPro - Professional Laundry & Ironing Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <i class="fas fa-soap"></i>
+                <span>LaundryPro</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#booking">Book Now</a></li>
+                <li><a href="#track">Track Order</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#plans">Plans</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+            </ul>
+            <div class="auth-buttons" id="authButtons">
+                <a href="#" class="btn btn-login" onclick="openModal('loginModal')">Login</a>
+                <a href="#" class="btn btn-signup" onclick="openModal('signupModal')">Sign Up</a>
+                <button class="mobile-menu-btn" onclick="openModal('mobileMenuModal')"><i>class="fas
+                        fa-bars"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Professional Laundry & Ironing Services</h1>
+                <p>Book online, schedule pickup, and get your clothes back fresh and clean!</p>
+                <div class="hero-buttons">
+                    <a href="#booking" class="btn btn-schedule">Schedule Pickup</a>
+                    <a href="#services" class="btn btn-view-services">View Services</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section services-section">
+            <div class="container">
+                <h2 class="section-title">Our Services ✨</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">👕</div>
+                        <h3>Laundry Service</h3>
+                        <p>Professional wash, dry, and fold service for your everyday clothes</p>
+                        <p class="price">Starting from ₹50/kg</p>
+                        <a href="#booking" class="btn btn-primary">Book Now</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🔥</div>
+                        <h3>Ironing Service</h3>
+                        <p>Steam and press service to keep your clothes wrinkle-free and sharp</p>
+                        <p class="price">Starting from ₹20/piece</p>
+                        <a href="#booking" class="btn btn-primary">Book Now</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">✨</div>
+                        <h3>Dry Cleaning</h3>
+                        <p>Special care for delicate fabrics and formal wear</p>
+                        <p class="price">Starting from ₹150/piece</p>
+                        <a href="#booking" class="btn btn-primary">Book Now</a>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="plans" class="section plans-section">
+            <div class="container">
+                <h2 class="section-title">Our Subscription Plans 🚀</h2>
+                <p class="section-subtitle">Choose the perfect plan for a hassle-free laundry experience.</p>
+                <div class="plans-grid">
+                    <div class="plan-card">
+                        <h3 class="plan-title">Basic</h3>
+                        <p class="plan-price">₹999/month</p>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check-circle"></i> Up to 10kg/month</li>
+                            <li><i class="fas fa-check-circle"></i> Wash & Fold</li>
+                            <li><i class="fas fa-check-circle"></i> Standard Delivery</li>
+                        </ul>
+                        <!-- <a href="#" class="btn btn-plan-primary">Choose Plan</a> -->
+                        <a href="#" class="btn btn-plan-primary"
+                            onclick="choosePlan('Basic', 999, 'laundry', 10)">Choose Plan</a>
+                    </div>
+                    <div class="plan-card featured-plan">
+                        <h3 class="plan-title-accent">Pro</h3>
+                        <p class="plan-price">₹1,999/month</p>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check-circle"></i> Up to 25kg/month</li>
+                            <li><i class="fas fa-check-circle"></i> Wash, Fold & Iron</li>
+                            <li><i class="fas fa-check-circle"></i> Express Delivery</li>
+                            <li><i class="fas fa-check-circle"></i> Free Stain Removal</li>
+                        </ul>
+                        <!-- <a href="#" class="btn btn-plan-accent">Choose Plan</a> -->
+                        <a href="#" class="btn btn-plan-accent" onclick="choosePlan('Pro', 1999, 'ironing', 25)">Choose
+                            Plan</a>
+                    </div>
+                    <div class="plan-card">
+                        <h3 class="plan-title">Family</h3>
+                        <p class="plan-price">₹2,999/month</p>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check-circle"></i> Up to 50kg/month</li>
+                            <li><i class="fas fa-check-circle"></i> All Pro Features</li>
+                            <li><i class="fas fa-check-circle"></i> Free Dry Cleaning</li>
+                            <li><i class="fas fa-check-circle"></i> Priority Support</li>
+                        </ul>
+                        <!-- <a href="#" class="btn btn-plan-primary">Choose Plan</a> -->
+                        <a href="#" class="btn btn-plan-primary"
+                            onclick="choosePlan('Family', 2999, 'dry-cleaning', 50)">Choose Plan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-us" class="section why-us-section">
+            <div class="container">
+                <h2 class="section-title">Why Choose Us? ✨</h2>
+                <div class="why-us-grid">
+                    <div class="why-us-card">
+                        <div class="why-us-icon"><i class="fas fa-star"></i></div>
+                        <h3 class="why-us-title">Quality You Can Trust</h3>
+                        <p>Our professional team uses premium products and equipment to ensure every item is returned
+                            spotless and fresh.</p>
+                    </div>
+                    <div class="why-us-card">
+                        <div class="why-us-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3 class="why-us-title">Seamless App Experience</h3>
+                        <p>Our user-friendly app makes scheduling, tracking, and managing your laundry effortless, right
+                            from your phone.</p>
+                    </div>
+                    <div class="why-us-card">
+                        <div class="why-us-icon"><i class="fas fa-handshake"></i></div>
+                        <h3 class="why-us-title">Eco-Friendly Promise</h3>
+                        <p>We are committed to sustainability, using biodegradable detergents and energy-efficient
+                            machines.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="booking" class="section booking-section">
+            <div class="container">
+                <h2 class="section-title">Book Your Service 📝</h2>
+                <form class="booking-form" id="bookingForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="serviceType">Service Type</label>
+                            <select id="serviceType" name="serviceType" required>
+                                <option value="">Select a service</option>
+                                <option value="laundry">Laundry Service</option>
+                                <option value="ironing">Ironing Service</option>
+                                <option value="dry-cleaning">Dry Cleaning</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="items">Number of Items/Weight (kg)</label>
+                            <input type="number" id="items" name="items" min="1" placeholder="e.g., 5" required>
+                        </div>
+                    </div>
+
+                    <div class="express-service-option">
+                        <input type="checkbox" id="express" name="express">
+                        <label for="express">Express Service (Same day +₹50)</label>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickupDate">Pickup Date</label>
+                            <input type="date" id="pickupDate" name="pickupDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pickupTime">Pickup Time</label>
+                            <input type="time" id="pickupTime" name="pickupTime" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Pickup Address</label>
+                        <textarea id="address" name="address" rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="payment">Payment Method</label>
+                        <select id="payment" name="payment" required>
+                            <option value="">Select payment method</option>
+                            <option value="cash">Cash on Delivery</option>
+                            <option value="upi">UPI</option>
+                        </select>
+                    </div>
+
+                    <!-- QR Code section (hidden until payment=UPI) -->
+                    <div id="qr-section" style="display:none; text-align:center; margin:15px 0;">
+                        <h3>Scan to Pay</h3>
+                        <h4>8275730727@axl</h4>
+                        <canvas id="qrcode"></canvas>
+                        <p id="amountText"></p>
+                    </div>
+                    <button type="submit" class="btn btn-primary-full">Book Service</button>
+                </form>
+                <!-- <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script> -->
+            </div>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
+
+        <section id="track" class="section track-section">
+            <div class="container">
+                <h2 class="section-title">Track Your Order 🚚</h2>
+                <div class="track-form">
+                    <div class="form-group">
+                        <label for="orderId">Order ID</label>
+                        <input type="text" id="orderId" placeholder="Enter your order ID">
+                    </div>
+                    <button onclick="trackOrder()" class="btn btn-track">Track Order</button>
+                </div>
+                <div id="orderStatus" class="order-status-hidden">
+                    <h3 class="order-status-title">Order Status</h3>
+                    <div id="orderDetails" class="order-details"></div>
+                    <div class="status-steps">
+                        <div class="step" id="step1">
+                            <div class="step-icon">📦</div>
+                            <span>Picked Up</span>
+                        </div>
+                        <div class="step" id="step2">
+                            <div class="step-icon">🔄</div>
+                            <span>In Process</span>
+                        </div>
+                        <div class="step" id="step3">
+                            <div class="step-icon">🚚</div>
+                            <span>Out for Delivery</span>
+                        </div>
+                        <div class="step" id="step4">
+                            <div class="step-icon">✅</div>
+                            <span>Delivered</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-phone"></i> +91 8275730727</p>
+                <p><i class="fas fa-envelope"></i> info@laundrypro.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 2810 R_Hadawale Yewalewadi, Pune, Maharashtra 411048</p>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Laundry Service</a></li>
+                    <li><a href="#">Ironing Service</a></li>
+                    <li><a href="#">Dry Cleaning</a></li>
+                    <li><a href="#">Express Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#booking">Book Now</a></li>
+                    <li><a href="#track">Track Order</a></li>
+                    <li><a href="#why-us">Why Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 LaundryPro. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('loginModal')"><i class="fas fa-times"></i></button>
+            <h2 class="modal-title">Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary-full">Login</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="adminLoginModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('adminLoginModal')">X</button>
+            <h2>Admin Login</h2>
+            <form method="POST" action="/admin/login">
+                <label>Email</label>
+                <input type="email" name="adminEmail" required>
+                <label>Password</label>
+                <input type="password" name="adminPassword" required>
+                <button type="submit">Login as Admin</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div id="signupModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('signupModal')"><i class="fas fa-times"></i></button>
+            <h2 class="modal-title">Sign Up</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPhone">Phone</label>
+                    <input type="tel" id="signupPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary-full">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="mobileMenuModal" class="modal modal-mobile hidden">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('mobileMenuModal')"><i class="fas fa-times"></i></button>
+            <ul class="mobile-nav-links">
+                <li><a href="#services" onclick="closeModal('mobileMenuModal')">Services</a></li>
+                <li><a href="#booking" onclick="closeModal('mobileMenuModal')">Book Now</a></li>
+                <li><a href="#track" onclick="closeModal('mobileMenuModal')">Track Order</a></li>
+                <li><a href="#contact" onclick="closeModal('mobileMenuModal')">Contact</a></li>
+                <li><a href="#plans" onclick="closeModal('mobileMenuModal')">Plans</a></li>
+                <li><a href="#why-us" onclick="closeModal('mobileMenuModal')">Why Us</a></li>
+                <li><a href="#" class="btn btn-login-full" onclick="openModal('loginModal')">Login</a></li>
+                <li><a href="#" class="btn btn-signup-full" onclick="openModal('signupModal')">Sign Up</a></li>
+                <li><a href="#" class="btn btn-admin-full" onclick="openModal('adminLoginModal')">Admin</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const form = document.getElementById("bookingForm");
+        const qrSection = document.getElementById("qr-section");
+        const qrCanvas = document.getElementById("qrcode");
+        const amountText = document.getElementById("amountText");
+
+        // auto-show QR when payment method is UPI
+        document.getElementById("payment").addEventListener("change", function () {
+            if (this.value === "upi") {
+                // calculate price
+                const items = parseInt(document.getElementById("items").value || 0);
+                let price = items * 50; // ₹50 per item
+                if (document.getElementById("express").checked) {
+                    price += 50; // express fee
+                }
+
+                if (price > 0) {
+                    qrSection.style.display = "block";
+                    amountText.textContent = "Amount: ₹" + price;
+
+                    // create UPI QR
+                    const upiId = "8275730727@axl"; // replace with real UPI ID
+                    const payeeName = "Laundry Service";
+                    const qrData = `upi://pay?pa=${upiId}&pn=${payeeName}&am=${price}&cu=INR`;
+
+                    QRCode.toCanvas(qrCanvas, qrData, function (error) {
+                        if (error) console.error(error);
+                    });
+                }
+            } else {
+                qrSection.style.display = "none";
+            }
+        });
+
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const booking = Object.fromEntries(formData.entries());
+
+            // rename for backend
+            booking.paymentMethod = booking.payment;
+            delete booking.payment;
+
+            booking.expressService = booking.express ? true : false;
+            delete booking.express;
+
+            booking.id = "BK" + Math.floor(100000 + Math.random() * 900000);
+
+            let response = await fetch("/api/bookings", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(booking)
+            });
+
+            let result = await response.json();
+
+            if (response.ok) {
+                alert(
+                    "✅ Booking Successful!\n\n" +
+                    "Booking ID: " + booking.id + "\n" +
+                    "Service: " + booking.serviceType + "\n" +
+                    "Items: " + booking.items + "\n" +
+                    "Address: " + booking.address + "\n" +
+                    "Phone: " + booking.phone + "\n" +
+                    "Payment: " + booking.paymentMethod + "\n" +
+                    "Pickup Date: " + booking.pickupDate + "\n" +
+                    "Pickup Time: " + booking.pickupTime + "\n\n" +
+                    "Your order is now in process 🚚"
+                );
+
+                if (booking.paymentMethod === "upi") {
+                    alert("💰 Payment credited successfully via UPI QR!");
+                }
+            } else {
+                alert("❌ Error: " + result.message);
+            }
+
+        });
+    </script>
+
+    <script src="static/js/booking.js"></script>
+
+    <script src="script.js"></script>
+
+
+
+</body>
+
+</html>
